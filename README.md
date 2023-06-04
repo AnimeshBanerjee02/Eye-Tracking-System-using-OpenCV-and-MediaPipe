@@ -29,6 +29,8 @@ Tkinter: For creating the graphical user interface.
 1) Launch the eye tracking system using the provided script.
 
 2) The system will open a graphical user interface displaying information about the eye tracking system and its advantages.
+![jwfnjw](https://github.com/AnimeshBanerjee02/Eye-Tracking-System-using-OpenCV-and-MediaPipe/assets/113301447/7a16f81c-717b-4771-ae39-0507df313b51)
+
 
 3) Click on the "Start Testing" button to begin the eye tracking process. 
 
@@ -39,6 +41,8 @@ Tkinter: For creating the graphical user interface.
 6) Press the 'q' key to stop the eye tracking system.
 
 7) After stopping, the system will display a summary of the total time spent on each segment and the screen divisions.
+ ![Screenshot 2023-06-04 232525](https://github.com/AnimeshBanerjee02/Eye-Tracking-System-using-OpenCV-and-MediaPipe/assets/113301447/e8cab0d1-7adf-451f-8829-f4a8b86c069b)
+
 
 8) Close the graphical user interface to exit the program.
 
