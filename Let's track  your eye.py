@@ -5,34 +5,34 @@ from datetime import datetime, timedelta
 import tkinter as tk
 from tkinter import ttk
 
-# Constants
+# Taking Constants
 SCREEN_WIDTH, SCREEN_HEIGHT = 1920, 1080
 GRID_ROWS, GRID_COLS = 4, 4
 ROI_WIDTH = SCREEN_WIDTH // GRID_COLS
 ROI_HEIGHT = SCREEN_HEIGHT // GRID_ROWS
 
-# Initialize MediaPipe FaceMesh and drawing utility
+# Initializing MediaPipe FaceMesh and drawing utility
 mp_drawing = mp.solutions.drawing_utils
 mp_face_mesh = mp.solutions.face_mesh
 
-# Initialize video capture
+# Initializing video capture
 cap = cv2.VideoCapture(0)
 
-# Set screen size
+# Setting screen size
 cap.set(3, SCREEN_WIDTH)
 cap.set(4, SCREEN_HEIGHT)
 
-# Create empty list to store gaze data
+# Creating empty list to store gaze data
 gaze_data_list = []
 
-# Initialize start time
+# Initializing start time
 start_time = None
 
-# Create the UI window
+# Creating the UI window
 window = tk.Tk()
 window.title("Eye Tracking System")
 
-# Create the system information and advantages label
+# Creating the system information and advantages label
 info_text = """                                                                                                                     Eye Tracking System
 
             This eye tracking system utilizes the MediaPipe FaceMesh library and OpenCV to detect and track the movement of the user's left eye. 
@@ -117,15 +117,15 @@ def start_testing():
         if cv2.waitKey(1) & 0xFF == ord('q'):
             break
 
-    # Release the video capture and close all windows
+    # Releasing the video capture and close all windows
     cap.release()
     cv2.destroyAllWindows()
 
-    # Create a label to display the total times on the screen
+    # Creating a label to display the total times on the screen
     total_times_label = tk.Label(window, text="Total Time Spent on Each Segment:", font=("Arial", 14), bg='#D6EAF8', fg='#154360')
     total_times_label.pack(pady=10)
     
-    # Calculate total time spent on each segment
+    # Calculating total time spent on each segment
     total_times = {}
     for segment, gaze_duration in gaze_data_list:
         if segment in total_times:
@@ -133,11 +133,11 @@ def start_testing():
         else:
             total_times[segment] = gaze_duration
 
-    # Create a table to display the segments and their total times
+    # Creating a table to display the segments and their total times
     table_frame = tk.Frame(window, bg='#D6EAF8')
     table_frame.pack(pady=10)
 
-    # Create table headers
+    # Creating table headers
     headers = ['Segment', 'Total Time (s)']
     for col_index, header in enumerate(headers):
         label = tk.Label(table_frame, text=header, font=("Arial", 12, "bold"), bg='#D6EAF8', fg='#154360', padx=10, pady=5, relief=tk.RIDGE)
